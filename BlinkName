@@ -1,0 +1,47 @@
+
+int led1 = D7;
+
+void setup()
+{
+    pinMode(led1, OUTPUT);
+}
+
+void dot()
+{
+    //Turn on LED for 1 second
+    digitalWrite(led1, HIGH);
+    delay(1000);
+    //Turn off LED for 1 second
+    digitalWrite(led1, LOW);
+	delay(1000);
+}
+
+void dash()
+{
+    //Turn on LED for 3 seconds
+    digitalWrite(led1, HIGH);
+    delay(3000);
+    //Turn off LED for 1 second
+    digitalWrite(led1, LOW);
+	delay(1000);
+}
+
+void loop() 
+{
+    //D
+    dash(); dot(); dot();
+    delay(2000);
+    //Y
+    dash(); dot(); dash(); dash();
+    delay(2000);
+    //L
+    dot(); dash(); dot(); dot();
+    delay(2000);
+    //A
+    dot(); dash();
+    delay(2000);
+    //N
+    dash(); dot();
+    //End of word delay
+    delay(6000);
+}
